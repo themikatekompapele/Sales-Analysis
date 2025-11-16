@@ -32,8 +32,3 @@ Analysis of daily trading information for a large retail store, the primary obje
 
 
 
-## External and Technological Factors​
-
-- 
-# Key Strategic Recommendations
-## Content and Programming Strategies​
