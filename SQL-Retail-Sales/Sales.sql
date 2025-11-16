@@ -92,3 +92,18 @@ FROM
     MonthlyData
 ORDER BY
     month_start;
+
+--query analyse quarterly sales performance
+YEAR(sale_date) AS Sale_Year,
+    quarter(sale_date) AS Sale_Quarter,quantity_sold, daily_gross_profit_pct,
+    SUM(quantity_sold) AS Total_Quantity_Sold_Per_Quarter,
+    AVG(daily_sales) AS Avg_Daily_Profit_Per_Quarter,
+  CASE 
+   WHEN Sale_Quarter = 1 THEN 'Q1'
+   WHEN Sale_Quarter = 2 THEN 'Q2'
+   WHEN Sale_Quarter = 3 THEN 'Q3'
+   WHEN Sale_Quarter = 4 THEN 'Q4'
+  END AS Sale_Quarter
+FROM sales_retail
+GROUP BY Sale_Year, Sale_Quarter, quantity_sold,daily_gross_profit_pct
+ORDER BY Sale_Year, Sale_Quarter;
