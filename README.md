@@ -22,7 +22,7 @@ Analysis of daily trading information for a large retail store, the primary obje
 - Low % Average Daily Profit when total units sold are higher.
 
 ## Price Elasticity of Demand
-- The year 2015  has an outlier of -2417 PED, due to seasonal demand, or product promotions.However, the product is price sensitive.
+- The year 2015 (Quarter 4)  has an outlier of -149.46 PED, due to seasonal demand, or product promotions.However, the product is price sensitive.
 
 
 # 🛠️ Tech Stack
