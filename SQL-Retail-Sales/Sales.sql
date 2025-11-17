@@ -107,3 +107,23 @@ YEAR(sale_date) AS Sale_Year,
 FROM sales_retail
 GROUP BY Sale_Year, Sale_Quarter, quantity_sold,daily_gross_profit_pct
 ORDER BY Sale_Year, Sale_Quarter;
+
+--query to study the relationship between total units sold and average daily sales
+SELECT sale_date, SUM(average_daily_sales_pct) AS avg_daily_sales_pct, SUM(Quantity_Sold) AS total_units_sold,
+CASE 
+    WHEN sale_date BETWEEN '1/1/2014' AND '31/3/2014' THEN '2014 Q1'
+    WHEN sale_date BETWEEN '1/4/2014' AND '30/6/2014' THEN '2014 Q2'
+    WHEN sale_date BETWEEN '1/7/2014' AND '31/9/2014' THEN '2014 Q3'
+    WHEN sale_date BETWEEN '1/10/2014'AND '31/12/2014' THEN '2014 Q4'
+    WHEN sale_date BETWEEN '1/1/2015' AND '31/3/2015' THEN '2015 Q1'
+    WHEN sale_date BETWEEN '1/4/2015' AND '30/6/2015' THEN '2015 Q2'
+    WHEN sale_date BETWEEN '1/7/2015' AND '31/9/2015' THEN '2015 Q3'
+    WHEN sale_date BETWEEN '1/10/2015'AND '31/12/2015' THEN '2015 Q4'
+    WHEN sale_date BETWEEN '1/1/2016' AND  '31/3/2016' THEN '2016 Q1'
+    WHEN sale_date BETWEEN '1/4/2016' AND '30/6/2016' THEN '2016 Q2'
+    WHEN sale_date BETWEEN '1/7/2016' AND '31/9/2016' THEN '2016 Q3'
+    WHEN sale_date BETWEEN '1/10/2016'AND '31/12/2016' THEN '2016 Q4'
+  END AS quarter_sales
+  FROM sales_avg
+  GROUP BY sale_date;
+
